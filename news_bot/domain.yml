@@ -1,0 +1,59 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - get_news
+  - show_article
+  - tell_joke
+  - get_joke
+
+entities:
+  - news_field
+  - number_art
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_show_article:
+  - text: "Do you want to read a news description? (enter: show + 'news_field' + 'number of news')"
+  utter_goodbye_after_bad_joke:
+  - text: "i hope i wasn't too toxic! bye."
+  utter_tell_joke:
+  - text: "   * I will tell you a joke ;)"
+  utter_tell_secondjoke:
+  - text: "   * I will tell you an other joke ;)"
+  utter_hello_news:
+  - text: "** Hello! You asked for news."
+  utter_how_can_i_help_you:
+  - text: "I'm your assistante. I'can give you the news, i can tell jokes .. \nHow can i help you ?"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_show_news
+  - action_show_article
+  - action_get_joke
