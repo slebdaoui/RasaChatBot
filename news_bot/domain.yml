@@ -1,59 +1,89 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - get_news
-  - show_article
-  - tell_joke
-  - get_joke
-
-entities:
-  - news_field
-  - number_art
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-  utter_show_article:
-  - text: "Do you want to read a news description? (enter: show + 'news_field' + 'number of news')"
-  utter_goodbye_after_bad_joke:
-  - text: "i hope i wasn't too toxic! bye."
-  utter_tell_joke:
-  - text: "   * I will tell you a joke ;)"
-  utter_tell_secondjoke:
-  - text: "   * I will tell you an other joke ;)"
-  utter_hello_news:
-  - text: "** Hello! You asked for news."
-  utter_how_can_i_help_you:
-  - text: "I'm your assistante. I'can give you the news, i can tell jokes .. \nHow can i help you ?"
-
-
+version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
+intents:
+- show_article
+- mood_unhappy
+- get_news
+- deny
+- greet
+- goodbye
+- affirm
+- mood_great
+- bot_challenge
+- tell_joke
+- get_joke
+- report_issue
+slots:
+  first_name:
+    type: text
+    influence_conversation: true
+  last_name:
+    type: text
+    influence_conversation: true
+  email:
+    type: text
+    influence_conversation: true
+  issue:
+    type: text
+    influence_conversation: true
+entities:
+- news_field
+- number_art
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_show_article:
+  - text: "Do you want to read a news description? (enter: show + 'news_field' + 'number of news')"
+  utter_goodbye_after_bad_joke:
+  - text: I hope i wasn't too toxic! bye.
+  utter_tell_joke:
+  - text: "   * Im your assistante, i will try to make you laugh"
+  utter_tell_secondjoke:
+  - text: "   * I will tell you an other joke ;)"
+  utter_hello_news:
+  - text: '** Hello! You asked for news.'
+  utter_how_can_i_help_you:
+  - text: "I'm your assistante. \n  - I'can give you the news.\n  - I can tell jokes\n  - Do you wan't to report an issue?\n
+      How can i help you ?"
+  utter_ask_first_name:
+  - text: "Enter your first name: \n Your last name:\n Your email \nThe issue:"
+  utter_submit:
+  - text: Ok. Thanks!
+  utter_slots_values:
+  - text: " - Thanks {first_name} {last_name}!\n - Your demande will be treated in the shortest possible time. \n - We will send you an email to {email} \n to help you resolving the problem: {issue}."
 actions:
-  - action_show_news
-  - action_show_article
-  - action_get_joke
+- action_get_joke
+- action_show_article
+- action_show_news
+- utter_did_that_help
+- utter_goodbye_after_bad_joke
+- utter_greet
+- utter_hello_news
+- utter_show_article
+- utter_tell_joke
+- utter_tell_secondjoke
+
+forms:
+  problem_form:
+    first_name:
+    - type: from_text
+    last_name:
+    - type: from_text
+    email:
+    - type: from_text
+    issue:
+    - type: from_text
+

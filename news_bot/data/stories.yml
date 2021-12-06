@@ -47,3 +47,57 @@ stories:
   steps:
   - intent: get_joke
   - action: action_get_joke
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_tell_joke
+  - action: action_get_joke
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_tell_secondjoke
+  - action: action_get_joke
+  - action: utter_goodbye_after_bad_joke
+  - intent: get_news
+    entities:
+    - news_field: finance
+  - action: utter_hello_news
+  - action: action_show_news
+  - action: utter_show_article
+  - intent: show_article
+    entities:
+    - news_field: finance
+    - number_art: '2'
+  - action: action_show_article
+
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: report_issue
+  - action: problem_form
+  - active_loop: report_issue
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: Selmane
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: Lebdaoui
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: slebdaoui@enseirb.fr
+  - slot_was_set:
+    - requested_slot: issue
+  - slot_was_set:
+    - issue: My problem is ......
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values

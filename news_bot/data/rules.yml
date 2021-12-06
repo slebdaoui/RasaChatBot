@@ -11,3 +11,25 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+- rule: Show one article when usen type show news
+  steps:
+  - intent: show_article
+  - action: action_show_article
+
+
+- rule: Activate form
+  steps:
+  - intent: report_issue
+  - action: problem_form
+  - active_loop: problem_form
+
+- rule: Submit form
+  condition:
+  - active_loop: problem_form
+  steps:
+  - action: problem_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values
