@@ -1,14 +1,20 @@
--This is a simple implementation of a chatbot using rasa.
+# Rasa Chatbot
 
--This bot is capable of telling jokes and giving news.
+This is a simple implementation of a chatbot using [rasa](https://rasa.com). The bot is capable of telling jokes and giving news. Using this bot, you can also report an issue by filling a form.
 
--Using this bot you can also repport an issue by filling a form.
+# Authors
+
+- Selmane Lebdaoui
+- Jalal Izekki
+
+# Example
+
+You can find below an example of a conversation with the bot.
 
 
+```
+**Rasa chatbot**
 
-You can find bellow an example of a conversation with the bot.
-
-Rasa chatbot 
 Your input ->  Hello                                                                        
 Hey! How are you?
 Your input ->  sad                                                                          
@@ -55,9 +61,10 @@ The issue:
 Your input ->  selmane                                                                      
 Your input ->  lebdaoui                                                                     
 Your input ->  sl@g.com                                                                     
-Your input ->  My problem is hhah ahahha auajja                                             
+Your input ->  My problem is that news do not contain all the titles I am interested in.                                             
 Ok. Thanks!
 * Thanks selmane lebdaoui!
  * Your demande will be treated in the shortest possible time. 
  * We will send you an email to sl@g.com 
- to help you resolving the problem: My problem is hhah ahahha auajja.
+ to help you resolving the problem: My problem is that news do not contain all the titles I am interested in.
+```
