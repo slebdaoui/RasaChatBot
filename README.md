@@ -11,21 +11,20 @@ This is a simple implementation of a chatbot using [rasa](https://rasa.com). The
 
 You can find below an example of a conversation with the bot.
 
-
 ```
 **Rasa chatbot**
 
-Your input ->  Hello                                                                        
+Your input ->  Hello
 Hey! How are you?
-Your input ->  sad                                                                          
-* Im your assistante, i will try to make you laugh
+Your input ->  sad
+* I am your assistant, i will try to make you laugh
 July 4th is Independence day. And the day Chuck Norris was born. Coincidence? I think not.
 Did that help you?
-Your input ->  No                                                                           
-* I will tell you an other joke ;)
+Your input ->  No
+* I will tell you another joke ;)
 Chuck Norris solved the halting problem.
-I hope i wasn't too toxic! bye.
-Your input ->  give the covid news                                                          
+I hope I wasn't too toxic! bye.
+Your input ->  give the covid news
 ** Hello! You asked for news.
 covid news
    1-  Trevor Noah Suggests Sending Marjorie Taylor Greene to Beijing
@@ -49,22 +48,21 @@ covid news
    19-  Omicron threatens Asia oil demand just as pricing favours Atlantic crude - Reuters
    20-  South African Markets - Factors to watch on Dec 7 - Reuters
 Do you want to read a news description? (enter: show + 'news_field' + 'number of news')
-Your input ->  show news covid 1                                                            
+Your input ->  show news covid 1
 News: covid
 1- Trevor Noah Suggests Sending Marjorie Taylor Greene to Beijing
 *- Description: “If you want to get back at China, you have Marjorie Taylor Greene in the stands,” Noah said of the U.S. diplomatic boycott of the Olympics.
-Your input ->  i wan't to repport an issue                                                  
-Enter your first name: 
- Your last name:
- Your email 
+Your input ->  i want to report an issue
+Enter your first name:
+Your last name:
+Your email
 The issue:
-Your input ->  selmane                                                                      
-Your input ->  lebdaoui                                                                     
-Your input ->  sl@g.com                                                                     
-Your input ->  My problem is that news do not contain all the titles I am interested in.                                             
+Your input ->  selmane
+Your input ->  lebdaoui
+Your input ->  sl@g.com
+Your input ->  My problem is that news do not contain all the titles I am interested in.
 Ok. Thanks!
 * Thanks selmane lebdaoui!
- * Your demande will be treated in the shortest possible time. 
- * We will send you an email to sl@g.com 
- to help you resolving the problem: My problem is that news do not contain all the titles I am interested in.
+* Your demand will be treated in the shortest possible time.
+* We will send you an email to sl@g.com to help you resolving the problem: My problem is that news do not contain all the titles I am interested in.
 ```
